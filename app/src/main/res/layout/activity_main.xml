@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/bg_splash"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/ic_app_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_app_logo"
+        android:contentDescription="MYPOCKET Logo"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MYPOCKET"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+    android:id="@+id/tvAppName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal Planner and Money Manager"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All in one app"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="@color/gray"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>

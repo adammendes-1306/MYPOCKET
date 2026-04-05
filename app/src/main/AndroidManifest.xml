@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mypocket"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <!-- Internet permission (for OpenAI API) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Checking network connectivity -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Allows the app to read and write files from external storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Alarm -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <!-- Clean and rebuild the app after this change to avoid stale dex issues -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+
+        <!-- MainActivity with AppCompat theme, can be omitted if inherited from application -->
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.layoutInDisplayCutoutMode"
+                android:value="shortEdges"/>
+        </activity>
+
+        <!-- Other activities, they will inherit the AppCompat theme from the application tag -->
+        <!-- Home activity (bottom nav host) -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.view.layoutInDisplayCutoutMode"
+                android:value="shortEdges"/>
+        </activity>
+
+        <!-- Calendar/Event Section -->
+        <activity android:name=".ui.AddEventActivity" />
+        <activity android:name=".ui.EditEventActivity" />
+        <activity android:name=".ui.EventDetailActivity" />
+        <activity android:name=".ui.DayOverviewActivity" />
+
+        <!-- Task Section -->
+        <activity android:name=".ui.AddTaskActivity" />
+        <activity android:name=".ui.TaskDetailActivity" />
+
+        <!-- Wallet/Transaction Section -->
+        <activity android:name=".ui.AddTransactionActivity"/>
+        <activity android:name=".ui.TransactionDetailActivity"/>
+
+        <!-- Define FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.mypocket.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Reminder for events -->
+        <receiver
+            android:name=".ui.ReminderReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

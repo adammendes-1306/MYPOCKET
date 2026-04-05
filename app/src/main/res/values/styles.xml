@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Month Dialog Picker -->
+    <style name="MonthCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/month_cell_border</item>
+    </style>
+
+    <!-- Category Cell -->
+    <style name="CategoryCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/category_cell_border</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

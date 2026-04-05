@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/calendarFragment"
+    android:id="@+id/nav_graph">
+
+    <!-- GLOBAL ACTIONS -->
+    <action
+        android:id="@+id/action_global_accountSettingsFragment"
+        app:destination="@id/accountSettingsFragment" />
+
+    <action
+        android:id="@+id/action_global_categorySettingsFragment"
+        app:destination="@id/categorySettingsFragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mypocket.ui.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_categorySettingsFragment"
+            app:destination="@id/categorySettingsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_accountGroupSettingsFragment"
+            app:destination="@id/accountGroupSettingsFragment" />
+
+        <action
+            android:id="@+id/action_settingsFragment_to_accountSettingsFragment"
+            app:destination="@id/accountSettingsFragment" />
+
+        <action
+            android:id="@+id/action_settingsFragment_to_backupRestoreFragment"
+            app:destination="@id/backupRestoreFragment" />
+
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categorySettingsFragment"
+        android:name="com.example.mypocket.ui.CategorySettingsFragment"
+        android:label="Category Settings" />
+
+    <fragment
+        android:id="@+id/accountGroupSettingsFragment"
+        android:name="com.example.mypocket.ui.AccountGroupSettingsFragment"
+        android:label="Account Group">
+        <action
+            android:id="@+id/action_accountGroupSettingsFragment_to_manageAccountGroupFragment"
+            app:destination="@id/manageAccountGroupFragment">
+            <argument
+                android:name="groupId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountSettingsFragment"
+        android:name="com.example.mypocket.ui.AccountSettingsFragment"
+        android:label="Account Settings" />
+
+    <fragment
+        android:id="@+id/manageAccountGroupFragment"
+        android:name="com.example.mypocket.ui.ManageAccountGroupFragment"
+        android:label="Manage Account Group" />
+
+    <fragment
+        android:id="@+id/manageAccountFragment"
+        android:name="com.example.mypocket.ui.ManageAccountFragment"
+        android:label="Manage Account" />
+
+    <!-- Calendar Fragment -->
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.mypocket.ui.CalendarFragment"
+        android:label="Calendar" />
+
+    <!-- Task List Fragment -->
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.mypocket.ui.TaskListFragment"
+        android:label="Task List" />
+
+    <!-- Wallet Fragment -->
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.mypocket.ui.WalletFragment"
+        android:label="Wallet" />
+
+    <!-- Statistics Fragment -->
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.mypocket.ui.StatisticsFragment"
+        android:label="Statistics" />
+
+    <!-- Account Balances Fragment -->
+    <fragment
+        android:id="@+id/accountBalancesFragment"
+        android:name="com.example.mypocket.ui.AccountBalancesFragment"
+        android:label="Account Balances" />
+
+    <!-- Backup and Restore Fragment -->
+    <fragment
+        android:id="@+id/backupRestoreFragment"
+        android:name="com.example.mypocket.ui.BackupRestoreFragment"
+        android:label="Backup and Restore" />
+
+    <!-- About Fragment -->
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.mypocket.ui.AboutFragment"
+        android:label="About" />
+
+</navigation>

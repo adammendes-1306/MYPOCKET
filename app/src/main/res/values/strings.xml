@@ -1,0 +1,8 @@
+<!-- Used to store all text in one place -->
+<resources>
+    <string name="app_name">MYPOCKET</string>
+
+    <string name="label_income">Income %1$s</string>
+    <string name="label_expense">Expense %1$s</string>
+    <string name="label_total">Total %1$s</string>
+</resources>

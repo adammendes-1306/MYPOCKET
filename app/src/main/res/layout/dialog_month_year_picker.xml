@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Year selector -->
+    <LinearLayout
+        android:id="@+id/llYearSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnPrevYear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_btn_prev"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:text="2026"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/btnNextYear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_btn_next"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp" />
+
+    </LinearLayout>
+
+    <!-- Month grid -->
+    <GridLayout
+        android:id="@+id/gridMonths"
+        android:columnCount="4"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView style="@style/MonthCell" android:text="Jan"/>
+        <TextView style="@style/MonthCell" android:text="Feb"/>
+        <TextView style="@style/MonthCell" android:text="Mar"/>
+        <TextView style="@style/MonthCell" android:text="Apr"/>
+
+        <TextView style="@style/MonthCell" android:text="May"/>
+        <TextView style="@style/MonthCell" android:text="Jun"/>
+        <TextView style="@style/MonthCell" android:text="Jul"/>
+        <TextView style="@style/MonthCell" android:text="Aug"/>
+
+        <TextView style="@style/MonthCell" android:text="Sep"/>
+        <TextView style="@style/MonthCell" android:text="Oct"/>
+        <TextView style="@style/MonthCell" android:text="Nov"/>
+        <TextView style="@style/MonthCell" android:text="Dec"/>
+
+    </GridLayout>
+
+    <!-- Cancel -->
+    <TextView
+        android:id="@+id/btnCancel"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This allows access to the app's files directory -->
+    <files-path
+        name="my_backup_files"
+        path="." />
+
+    <!-- Allow access to the app's external files directory (external storage) -->
+    <external-files-path
+        name="my_external_backup_files"
+        path="." />
+</paths>
